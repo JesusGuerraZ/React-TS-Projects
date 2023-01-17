@@ -1,23 +1,10 @@
-/* eslint-disable semi */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable no-trailing-spaces */
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ContadorScreen } from './src/screens/ContadorScreen';
+import {HolaMundoScreen} from './src/screens/HolaMundoScreen';
 
-const App = () => {
+export const App = () => {
   return (
-    <View style={{
-      flex: 1,
-      backgroundColor: 'white',
-      justifyContent: 'center',
-    }}>
-      <Text style={{
-        fontSize: 45,
-        textAlign: 'center'
-      }}> Hola mundo</Text>
-    </View>
+      // <HolaMundoScreen/>
+      <ContadorScreen />
   )
 }
-
-
-export default App;
