@@ -1,21 +1,13 @@
 import { useState } from "react";
-import { Button, Text, TouchableOpacity, View } from "react-native"
+import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 export const ContadorScreen = () => {
 
     const [contador, setContador] = useState(10);
 
   return (
-    <View style={{
-        flex: 1,
-        justifyContent: 'center',
-    }}>
-        <Text style={{
-            textAlign: 'center',
-            fontSize: 40,
-            color: 'purple',
-            top: -15,
-         }}>
+    <View style={styles.container}>
+        <Text style={styles.title}>
             Contador: { contador }
         </Text>
 
@@ -28,19 +20,38 @@ export const ContadorScreen = () => {
         onPress={() => setContador(contador - 1)}
         /> */}
 
-        <TouchableOpacity onPress={() => setContador(contador + 1)} style={{
-          marginEnd: 150,
-          marginStart: 150,
-        }}>
-          <Text style={{
-            textAlign: 'center',
-            backgroundColor: '#DDDDDD',
-            padding: 10,
-            borderRadius: 50
-          }}>
+        <TouchableOpacity onPress={() => setContador(contador + 1)} style={styles.touch}>
+          <Text style={styles.button}>
             Click
           </Text>
         </TouchableOpacity>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+
+  title: {
+    textAlign: 'center',
+    fontSize: 40,
+    color: 'purple',
+    top: -15,
+ },
+
+ touch: {
+  marginEnd: 150,
+  marginStart: 150,
+},
+
+button: {
+  textAlign: 'center',
+  backgroundColor: '#DDDDDD',
+  padding: 10,
+  borderRadius: 50
+}
+
+})
