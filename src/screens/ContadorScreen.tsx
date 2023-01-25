@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
+import { Fab } from "../components/Fab";
 
 export const ContadorScreen = () => {
 
@@ -20,11 +21,25 @@ export const ContadorScreen = () => {
         onPress={() => setContador(contador - 1)}
         /> */}
 
-        <TouchableOpacity onPress={() => setContador(contador + 1)} style={styles.touch}>
-          <Text style={styles.button}>
-            Click
-          </Text>
-        </TouchableOpacity>
+        <Fab 
+          title="+1" 
+          onPress={() => setContador(contador + 1)} 
+          position="br"
+        ></Fab>
+
+        <Fab 
+          title="-1" 
+          onPress={() => setContador(contador - 1)} 
+          position="bl"
+          ></Fab>
+          
+        {/* <TouchableOpacity onPress={() => setContador(contador - 1)} style={styles.fabLocationBL}>
+          <View style={styles.fab}>
+            <Text style={styles.fabText}>
+              -1
+            </Text>
+          </View>
+        </TouchableOpacity> */}
     </View>
   )
 }
@@ -42,16 +57,16 @@ const styles = StyleSheet.create({
     top: -15,
  },
 
- touch: {
-  marginEnd: 150,
-  marginStart: 150,
-},
+//  touch: {
+//   marginEnd: 150,
+//   marginStart: 150,
+// },
 
-button: {
-  textAlign: 'center',
-  backgroundColor: '#DDDDDD',
-  padding: 10,
-  borderRadius: 50
-}
+// button: {
+//   textAlign: 'center',
+//   backgroundColor: '#DDDDDD',
+//   padding: 10,
+//   borderRadius: 50
+// }
 
 })
